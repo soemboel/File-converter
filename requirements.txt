@@ -1,0 +1,14 @@
+Pillow
+tkinterdnd2
+svglib
+reportlab
+rlPyCairo
+
+# dokumen
+pypdf
+python-docx
+markdown
+beautifulsoup4
+html2text
+pdf2docx
+docx2pdf

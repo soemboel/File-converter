@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Hasil konversi
+hasil_konversi/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
