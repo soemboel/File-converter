@@ -34,4 +34,4 @@ Setiap tab (Gambar/Dokumen/Audio/Video) punya alur yang sama: seret & lepas file
 `image_converter.py` juga masih bisa dijalankan sendiri (`python script/image_converter.py`) sebagai konverter gambar mandiri, memakai tema dan ikon yang sama.
 
 ## Note !!!
-u must install [python](https://www.python.org/downloads/) at your pc first
+u must install [python](https://www.python.org/downloads/) at your pc first goodluck!
