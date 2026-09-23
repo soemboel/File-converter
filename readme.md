@@ -4,13 +4,13 @@ GUI bertema laut untuk mengonversi **Gambar**, **Dokumen**, **Audio**, dan **Vid
 
 ## Struktur
 
-- `theme.py` - palet warna laut dan ikon jendela, dipakai bersama semua GUI
-- `common.py` - fungsi utilitas bersama (nama file output unik)
-- `image_converter.py` - fungsi konversi gambar (JPEG, JPG, PNG, WEBP, SVG)
-- `document_converter.py` - fungsi konversi dokumen (TXT, PDF, DOCX, HTML, MD)
-- `audio_converter.py` - fungsi konversi audio (MP3, WAV, OGG, FLAC, AAC, M4A, WMA)
-- `video_converter.py` - fungsi konversi video (MP4, AVI, MOV, MKV, WEBM, GIF, ekstrak MP3)
-- `app.py` - GUI utama, menggabungkan keempat modul di atas dalam satu jendela bertab
+- `script/theme.py` - palet warna laut dan ikon jendela, dipakai bersama semua GUI
+- `script/common.py` - fungsi utilitas bersama (nama file output unik)
+- `script/image_converter.py` - fungsi konversi gambar (JPEG, JPG, PNG, WEBP, SVG)
+- `script/document_converter.py` - fungsi konversi dokumen (TXT, PDF, DOCX, HTML, MD)
+- `script/audio_converter.py` - fungsi konversi audio (MP3, WAV, OGG, FLAC, AAC, M4A, WMA)
+- `script/video_converter.py` - fungsi konversi video (MP4, AVI, MOV, MKV, WEBM, GIF, ekstrak MP3)
+- `script/app.py` - GUI utama, menggabungkan keempat modul di atas dalam satu jendela bertab
 - `favicon/favicon.ico` - favicon jendela
 
 ## Instalasi
@@ -26,9 +26,9 @@ Untuk hasil terbaik DOCX ke PDF, Microsoft Word perlu terpasang (dipakai lewat `
 ## Menjalankan
 
 ```
-python app.py
+python script/app.py
 ```
 
 Setiap tab (Gambar/Dokumen/Audio/Video) punya alur yang sama: seret & lepas file (atau klik untuk memilih), pilih format tujuan, pilih folder tujuan, lalu klik "Konversi Sekarang".
 
-`image_converter.py` juga masih bisa dijalankan sendiri (`python image_converter.py`) sebagai konverter gambar mandiri, memakai tema dan ikon yang sama.
+`image_converter.py` juga masih bisa dijalankan sendiri (`python script/image_converter.py`) sebagai konverter gambar mandiri, memakai tema dan ikon yang sama.

@@ -18,7 +18,9 @@ COLORS = {
     "border": "#90e0ef",
 }
 
-ICON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "favicon", "favicon.ico")
+ICON_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "favicon", "favicon.ico"
+)
 
 
 def apply_icon(root):
