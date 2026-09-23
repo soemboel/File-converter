@@ -32,3 +32,6 @@ python script/app.py
 Setiap tab (Gambar/Dokumen/Audio/Video) punya alur yang sama: seret & lepas file (atau klik untuk memilih), pilih format tujuan, pilih folder tujuan, lalu klik "Konversi Sekarang".
 
 `image_converter.py` juga masih bisa dijalankan sendiri (`python script/image_converter.py`) sebagai konverter gambar mandiri, memakai tema dan ikon yang sama.
+
+## Note !!!
+u must install [python](https://www.python.org/downloads/) at your pc first
