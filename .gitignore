@@ -16,3 +16,8 @@ hasil_konversi/
 .idea/
 Thumbs.db
 .DS_Store
+
+# Build
+build/
+dist/
+*.spec

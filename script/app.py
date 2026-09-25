@@ -34,6 +34,7 @@ import audio_converter as audio_mod
 import document_converter as document_mod
 import image_converter as image_mod
 import video_converter as video_mod
+from common import app_dir
 from theme import COLORS, apply_icon, apply_ocean_theme
 
 
@@ -81,7 +82,7 @@ class ConverterTab(ttk.Frame):
 
         self.files = []
         self.output_dir = tk.StringVar(
-            value=os.path.join(os.getcwd(), "hasil_konversi", default_subdir)
+            value=os.path.join(app_dir(), "hasil_konversi", default_subdir)
         )
         self.target_format = tk.StringVar(value=default_format)
 

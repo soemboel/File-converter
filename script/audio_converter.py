@@ -3,17 +3,14 @@ Konverter Audio - fungsi-fungsi untuk mengonversi audio antar format.
 
 Format didukung: MP3, WAV, OGG, FLAC, AAC, M4A, WMA
 
-Membutuhkan ffmpeg terpasang dan tersedia di PATH sistem.
+Membutuhkan ffmpeg (di sebelah aplikasi atau di PATH sistem).
 Download: https://ffmpeg.org/download.html
 """
 
 import os
-import shutil
-import subprocess
+from common import find_ffmpeg, run_ffmpeg, unique_output_path
 
-from common import unique_output_path
-
-FFMPEG_AVAILABLE = shutil.which("ffmpeg") is not None
+FFMPEG_AVAILABLE = find_ffmpeg() is not None
 
 SUPPORTED_OUTPUT_FORMATS = ["MP3", "WAV", "OGG", "FLAC", "AAC", "M4A", "WMA"]
 SUPPORTED_INPUT_EXTENSIONS = {".mp3", ".wav", ".ogg", ".flac", ".aac", ".m4a", ".wma"}
@@ -39,19 +36,10 @@ def detect_format(file_path):
 
 def convert_audio(input_path, output_dir, target_format):
     """Konversi satu file audio menggunakan ffmpeg. Mengembalikan path file hasil."""
-    if not FFMPEG_AVAILABLE:
-        raise RuntimeError(
-            "ffmpeg tidak ditemukan. Install ffmpeg dan pastikan ada di PATH: "
-            "https://ffmpeg.org/download.html"
-        )
-
     base_name = os.path.splitext(os.path.basename(input_path))[0]
     target_format = target_format.upper()
     ext = f".{target_format.lower()}"
     output_path = unique_output_path(output_dir, base_name, ext)
 
-    cmd = ["ffmpeg", "-y", "-i", input_path, *_CODEC_ARGS.get(target_format, []), output_path]
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode != 0:
-        raise RuntimeError(f"ffmpeg gagal: {result.stderr[-500:]}")
+    run_ffmpeg(["-y", "-i", input_path, *_CODEC_ARGS.get(target_format, []), output_path])
     return output_path
